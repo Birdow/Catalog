@@ -5,7 +5,8 @@ using Catalog.Entities;
 
 namespace Catalog.Repositories
 {
-    public class InMemItemRepository
+    // repository implements Interface (for Dependency Inj.)
+    public class InMemItemRepository : IItemRepository
     {
         private readonly List<Item> items = new()
         {
