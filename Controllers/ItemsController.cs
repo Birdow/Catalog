@@ -10,11 +10,12 @@ namespace Catalog.Controllers
     [Route("items")] // GET /items
     public class ItemsController : ControllerBase
     {
-        private readonly InMemItemRepository repository;
+        private readonly IItemRepository repository;
 
-        public ItemsController()
+        // Depencency Injection of IItemRepository
+        public ItemsController(IItemRepository repository)
         {
-            repository = new InMemItemRepository();
+            this.repository = repository;
         }
 
         //GET  /items
